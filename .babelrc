@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["env", { "modules": false }],
+    "stage-2"
+  ],//预设插件
+  "plugins": ["transform-runtime"],//依赖插件
+  "comments": false,//转化后代码不生成注释
+  "env": {
+    "test": {
+      "presets": ["env", "stage-2"],
+      "plugins": [ "istanbul" ]
+    }
+  }
+}
