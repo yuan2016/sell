@@ -40,11 +40,11 @@
     },
     methods: {
       ...mapMutations([
-        'RECORD_FOODS', 'RECORD_GOODS'
+        'RECORD_FOODS', 'RECORD_SELLER'
       ]),
       clearCart () {
         this.RECORD_FOODS(null);
-        this.RECORD_GOODS(null);
+        this.RECORD_SELLER(null);
       }
     },
     computed: {
