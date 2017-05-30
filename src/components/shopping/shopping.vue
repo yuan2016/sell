@@ -4,7 +4,7 @@
       <div slot="title" class="shopping-title">购物车</div>
     </outerHeader>
     <div class="shopping-content" v-if="this.foods">
-      <div class="shopcart-title">{{this.seller.name}}<i class="icon-dustbin"></i></div>
+      <div class="shopcart-title">{{this.seller.name}}<i class="icon-dustbin" @click.stop.prevent="clearCart"></i></div>
       <div class="foodcart-item" v-for="foodcart in this.foods">
         <img :src="foodcart.icon" class="foodcart-img">
         <div class="foodcart-right">
@@ -31,12 +31,21 @@
 <script type="text/ecmascript-6">
   import outerFooter from '../common/footer/outerFooter';
   import outerHeader from '../common/header/outerHeader';
-  import {mapState} from 'vuex'
+  import {mapState, mapMutations} from 'vuex'
 
   export default {
     components: {
       outerFooter,
       outerHeader
+    },
+    methods: {
+      ...mapMutations([
+        'RECORD_FOODS', 'RECORD_GOODS'
+      ]),
+      clearCart () {
+        this.RECORD_FOODS(null);
+        this.RECORD_GOODS(null);
+      }
     },
     computed: {
       ...mapState([
@@ -65,8 +74,8 @@
     margin-left: 0.3rem
     .shopcart-title
       position: relative
-      padding: 0.3rem 0
-      font-size: 0.8rem
+      padding: 0.5rem 0
+      font-size: 0.6rem
       border-bottom: 0.05rem solid #f1f1f1
       .icon-dustbin
         position: absolute
@@ -74,19 +83,19 @@
         right: 0.3rem
     .foodcart-item
       position: relative
-      padding: 0.3rem 0.2rem 0.3rem 0
+      padding: 0.7rem 0.2rem 0.7rem 0
       border-bottom: 0.05rem solid #f1f1f1
       .foodcart-img
         position: absolute
         left: 0
-        top: 0.3rem
+        top: 0.7rem
         width: 1.5rem
         height: 1.5rem
       .foodcart-right
         position: relative
         padding-left: 2rem
         .foodcart-name
-          font-size: 0.8rem
+          font-size: 0.6rem
         .foodcart-info .foodcart-count
           font-size: 0.6rem
           color: #666
@@ -94,23 +103,23 @@
           position: absolute
           bottom: 0.1rem
           right: 0.2rem
-          font-size: 0.8rem
+          font-size: 0.6rem
           color: #ff0000
     .foodcart-deliveryPrice
       position: relative
-      padding: 0.3rem 0
+      padding: 0.7rem 0
       border-bottom: 0.05rem solid #f1f1f1
-      font-size: 0.8rem
+      font-size: 0.6rem
       .deliveryPrice-value
         position: absolute
-        bottom: 0.2rem
+        bottom: 0.7rem
         right: 0.4rem
-        font-size: 0.8rem
+        font-size: 0.6rem
         color: #ff0000
     .count-value-back
       position: relative
       padding: 0.7rem 0
-      font-size: 0.8rem
+      font-size: 0.6rem
       .value-extra
         font-size: 0.6rem
         color: #666
@@ -132,7 +141,7 @@
     .count-value-go
       position: relative
       padding: 1.1rem 0
-      font-size: 0.8rem
+      font-size: 0.6rem
     .value-right
       position: absolute
       right: 0.3rem

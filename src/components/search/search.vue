@@ -74,6 +74,13 @@
         clearHistory();
         this.isOpen = !this.isOpen;
       }
+    },
+    watch: {
+      searchWord: function (searchWord) {
+        if (searchWord === '') {
+          this.isShow = !this.isShow;
+        }
+      }
     }
   }
 </script>
