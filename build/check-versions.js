@@ -1,5 +1,7 @@
-var chalk = require('chalk')
-var semver = require('semver')
+//检测当前版本的node和npm是否达到可用的标准 对照package.json文件
+
+var chalk = require('chalk')//一个可以在控制台打出各种颜色logger的插件
+var semver = require('semver')//处理依赖关系的API
 var packageConfig = require('../package.json')
 
 function exec (cmd) {

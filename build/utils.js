@@ -9,6 +9,8 @@ exports.assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path)
 }
 
+
+// 遍历的到最后要用到的css-loader 数组
 exports.cssLoaders = function (options) {
   options = options || {}
 

@@ -9,7 +9,7 @@
           <div class="num" v-show="totalCount>0">{{totalCount}}</div>
         </div>
         <div class="price" :class="{'highlight':totalPrice>0}">￥{{totalPrice}}</div>
-        <div class="desc">另需配送费￥{{deliveryPrice}}元</div>
+        <div class="desc">配送费￥{{deliveryPrice}}元</div>
       </div>
       <div class="content-right">
         <div class="pay" :class="payClass" @click.stop.prevent="pay">{{payDesc}}</div>
@@ -76,13 +76,7 @@
     },
     props: {
       selectFoods: {
-        type: Array,
-        default () {
-          return [{
-            price: 10,
-            count: 2
-          }]
-        }
+        type: Array
       },
       deliveryPrice: {
         type: Number,
@@ -215,7 +209,7 @@
         if (this.totalPrice < this.minPrice) {
           return;
         } else {
-            window.alert(`支付${this.totalPrice}元`)
+            window.alert(`支付${this.totalPrice + this.deliveryPrice}元`)
         }
       }
     },
@@ -234,7 +228,7 @@
   bottom:0
   z-index: 50
   width:100%
-  height: 48px
+  height: 2.4rem
   .content
     display: flex
     background :#141d17
@@ -244,11 +238,11 @@
       .logo-wrapper
         display: inline-block
         position: relative
-        top: -10px
-        margin:0 12px
-        padding: 6px
-        width: 56px
-        height: 56px
+        top: -0.5rem
+        margin:0 0.6rem
+        padding: 0.3rem
+        width: 2.8rem
+        height: 2.8rem
         box-sizing:border-box
         vertical-align:top
         border-radius :50%
@@ -262,34 +256,34 @@
           &.highlight
             background :rgb(0,160,220)
           .icon-shopping_cart
-            font-size: 24px
+            font-size: 1.2rem
             color: #80858a
-            line-height: 44px
+            line-height: 2.2rem
             &.highlight
               color:#fff
         .num
           position: absolute
           top:0
           right:0
-          width: 24px
-          height: 16px
-          line-height: 16px
+          width: 1.2rem
+          height: 0.8rem
+          line-height: 0.8rem
           text-align :center
-          border-radius :16px
-          font-size: 9px
+          border-radius :0.8rem
+          font-size: 0.45rem
           font-weight :700
           color: #fff
           background: rgb(240, 20, 20)
-          box-shadow :0 4px 8px 0 rgba(0,0,0,0.4)
+          box-shadow :0 0.2rem 0.4rem 0 rgba(0,0,0,0.4)
       .price
         display: inline-block
         vertical-align :top
-        margin-top:12px
-        padding-right:12px
-        line-height:24px
+        margin-top: 0.6rem
+        padding-right: 0.6rem
+        line-height: 1.2rem
         box-sizing :border-box
-        border-right :1px solid rgba(255,255,255,0.1)
-        font-size: 16px
+        border-right :0.05rem solid rgba(255,255,255,0.1)
+        font-size: 0.8rem
         font-weight:700
         color: rgba(255,255,255,0.4)
         &.highlight
@@ -297,19 +291,19 @@
       .desc
         display: inline-block
         vertical-align :top
-        margin :12px 0 0 12px
-        font-size 12px
-        line-height 24px
+        margin : 0.6rem 0 0.6rem
+        font-size 0.6rem
+        line-height 1.2rem
         color:rgba(255,255,255,0.4)
         font-weight :700
     .content-right
-      flex:0 0 105px
-      width: 105px
+      flex:0 0 5.25rem
+      width: 5.25rem
       .pay
-        height: 48px
-        line-height: 48px
+        height: 2.4rem
+        line-height: 2.4rem
         text-align :center
-        font-size :12px
+        font-size :0.6rem
         color: rgba(255,255,255,0.4)
         font-weight :700
         background :#2b333b
@@ -321,12 +315,12 @@
   .ball-container
     .ball
       position: fixed
-      left: 32px
-      bottom: 22px
+      left: 1.6rem
+      bottom: 1.1rem
       z-index: 200
       .inner
-        width: 16px
-        height: 16px
+        width: 0.8rem
+        height: 0.8rem
         border-radius: 50%
         background: rgb(0, 160, 220)
       &.drop-leave-active
@@ -347,45 +341,45 @@
       transition: all .4s linear
       transform: translate3d(0, 0, 0);
     .list-header
-      height: 40px
-      line-height :40px
-      padding:0 18px
+      height: 2rem
+      line-height :2rem
+      padding:0 0.9rem
       background: #f3f5f7
-      border-bottom: 1px solid rgba(7,17,27,0.1)
+      border-bottom: 0.05rem solid rgba(7,17,27,0.1)
       .title
         float: left
-        font-size :14px
+        font-size :0.7rem
         color: rgb(7, 17, 27)
       .empty
         float: right
-        font-size: 12px
+        font-size: 0.6rem
         color: rgb(0, 160, 220)
     .list-content
-      padding:0 18px
-      max-height :190px
+      padding:0 0.9rem
+      max-height :9.5rem
       background: #fff
       overflow: hidden
       .food
         position: relative
-        padding:12px 0
+        padding: 0.6rem 0
         box-sizing :border-box
         border-1px(rgba(1,17,27,0.1))
       .name
-        line-height :24px
-        font-size :14px
+        line-height :1.2rem
+        font-size :0.7rem
         color:rgb(7,17,27)
       .price
         position: absolute
-        right: 90px
-        bottom: 12px
-        line-height :24px
-        font-size: 14px
+        right: 4.5rem
+        bottom: 0.6rem
+        line-height :1.2rem
+        font-size: 0.7rem
         font-weight :700
         color: rgb(240, 20, 20)
       .cartcontrol-wrapper
         position: absolute
         right:0
-        bottom: 6px
+        bottom: 0.3rem
   .list-mask
     position: fixed
     top:0

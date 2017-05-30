@@ -7,6 +7,6 @@ module.exports = {
     sourceMap: isProduction
       ? config.build.productionSourceMap
       : config.dev.cssSourceMap,
-    extract: isProduction
+    extract: isProduction    //是否将组件分成不同的文件
   })
 }

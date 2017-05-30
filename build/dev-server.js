@@ -1,36 +1,38 @@
-require('./check-versions')()
+require('./check-versions')()// 检查 Node 和 npm 版本
 //配置文件
-var config = require('../config')
+var config = require('../config')// 获取 config/index.js 的默认配置
+/*
+ ** 如果 Node 的环境无法判断当前是 dev / product 环境
+ ** 使用 config.dev.env.NODE_ENV 作为当前的环境
+ */
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
-var opn = require('opn')
-//操作文件路径的方法
-var path = require('path')
-//nodeJS框架，在这里用它启动webserver
-var express = require('express')
-//核心编译工具
-var webpack = require('webpack')
-//http协议代理的中间件 可以代理和转发一些api
-var proxyMiddleware = require('http-proxy-middleware')
-//webpack 相关配置
-var webpackConfig = require('./webpack.dev.conf')
+var opn = require('opn')// 一个可以强制打开浏览器并跳转到指定 url 的插件
+var path = require('path')// 使用 NodeJS 自带的文件路径工具
+var express = require('express')//nodeJS框架，在这里用它启动webserver
+var webpack = require('webpack')//核心编译工具
+var proxyMiddleware = require('http-proxy-middleware')//http协议代理的中间件 可以代理和转发一些api
+var webpackConfig = require('./webpack.dev.conf') // 使用 dev 环境的 webpack 配置
 
 // default port where dev server listens for incoming traffic
-var port = process.env.PORT || config.dev.port
+var port = process.env.PORT || config.dev.port /* 如果没有指定运行端口，使用 config.dev.port 作为运行端口 */
 // automatically open browser, if not set will be false
-var autoOpenBrowser = !!config.dev.autoOpenBrowser
+var autoOpenBrowser = !!config.dev.autoOpenBrowser /* 自动打开浏览器 */
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
 //拿到代理接口
 var proxyTable = config.dev.proxyTable;
 
-var app = express();
+var app = express();/* 使用 express 启动一个服务 */
 var appData = require('../data.json');
 var seller = appData.seller;
 var goods = appData.goods;
 var ratings = appData.ratings;
+var foodTypes = appData.foodTypes;
+var shopLists = appData.shopLists;
+var hotWord = appData.hotWord;
 
 var apiRoutes = express.Router();
 
@@ -54,14 +56,32 @@ apiRoutes.get('/ratings', function (req, res) {
 		data: ratings
 	});
 });
+  apiRoutes.get('/foodTypes', function (req, res) {
+  res.json({
+    errno: 0,
+    data: foodTypes
+  });
+});
+apiRoutes.get('/shopLists', function (req, res) {
+  res.json({
+    errno: 0,
+    data: shopLists
+  });
+});
+apiRoutes.get('/hotWord', function (req, res) {
+  res.json({
+    errno: 0,
+    data: hotWord
+  });
+});
 
 app.use('/api', apiRoutes);
 //编译
-var compiler = webpack(webpackConfig)
-/* 启动 webpack-dev-middleware，将 编译后的文件暂存到内存中 */
+var compiler = webpack(webpackConfig)// 启动 webpack 进行编译
+/* 启动 webpack-dev-middleware，服务端开发的时候，在内存中生成打包好的js文件*/
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  quiet: true
+  publicPath: webpackConfig.output.publicPath,   //  '/'引入html的时候作为js的路径
+  quiet: true//对控制台不显示任何内容
 })
 /* 启动 webpack-hot-middleware，也就是我们常说的 Hot-reload */
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
@@ -95,6 +115,7 @@ app.use(hotMiddleware)
 
 // 拼接 static 文件夹的静态资源路径
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
+//上边指定了静态资源的输出路径
 // 为静态资源提供响应服务
 app.use(staticPath, express.static('./static'))
 

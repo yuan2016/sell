@@ -14,6 +14,10 @@
     "bulletin": "粥品香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。",
     "supports": [
       {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
         "type": 4,
         "description": "已加入“外卖保”计划,食品安全保障"
       },
@@ -24,10 +28,6 @@
       {
         "type": 0,
         "description": "在线支付满28减5"
-      },
-      {
-        "type": 2,
-        "description": "单人精彩套餐"
       },
       {
         "type": 3,
@@ -1375,5 +1375,122 @@
       "avatar": "http://static.galileo.xiaojukeji.com/static/tms/default_header.png",
       "recommend": []
     }
-  ]
+  ],
+  "foodTypes":[[{"id":1,"name":"美食","pic":"https://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg"},
+    {"id":2,"name":"甜品饮品","pic":"https://fuss10.elemecdn.com/2/35/696aa5cf9820adada9b11a3d14bf5jpeg.jpeg"},
+    {"id":3,"name":"商超便利","pic":"https://fuss10.elemecdn.com/0/da/f42235e6929a5cb0e7013115ce78djpeg.jpeg"},
+    {"id":4,"name":"预定早餐","pic":"https://fuss10.elemecdn.com/f/f0/b9248cef8b1d65c35605649e09a75jpeg.jpeg"},
+    {"id":5,"name":"果蔬生鲜","pic":"https://fuss10.elemecdn.com/e/d5/c34712558800c7316e692af35c2ebjpeg.jpeg"},
+    {"id":6,"name":"新店特惠","pic":"https://fuss10.elemecdn.com/a/fa/d41b04d520d445dc5de42dae9a384jpeg.jpeg"},
+    {"id":7,"name":"准时达","pic":"https://fuss10.elemecdn.com/3/84/8e031bf7b3c036b4ec19edff16e46jpeg.jpeg"},
+    {"id":8,"name":"简餐","pic":"https://fuss10.elemecdn.com/d/38/7bddb07503aea4b711236348e2632jpeg.jpeg"}],
+  [{"id":11,"name":"帮买帮送","pic":"https://fuss10.elemecdn.com/0/3d/7125a96aab7d583151fbc376480b5jpeg.jpeg"},
+    {"id":12,"name":"汉堡薯条","pic":"https://fuss10.elemecdn.com/b/7f/432619fb21a40b05cd25d11eca02djpeg.jpeg"},
+    {"id":13,"name":"包子粥店","pic":"https://fuss10.elemecdn.com/2/17/244241b514affc0f12f4168cf6628jpeg.jpeg"},
+    {"id":14,"name":"鲜花蛋糕","pic":"https://fuss10.elemecdn.com/8/83/171fd98b85dee3b3f4243b7459b48jpeg.jpeg"},
+    {"id":15,"name":"麻辣烫","pic":"https://fuss10.elemecdn.com/3/c7/a9ef469a12e7a596b559145b87f09jpeg.jpeg"},
+    {"id":16,"name":"川湘菜","pic":"https://fuss10.elemecdn.com/9/7c/9700836a33e05c2410bda8da59117jpeg.jpeg"},
+    {"id":17,"name":"披萨意面","pic":"https://fuss10.elemecdn.com/7/b6/235761e50d391445f021922b71789jpeg.jpeg"},
+    {"id":18,"name":"日韩料理","pic":"https://fuss10.elemecdn.com/6/1a/1e0f448be0624c62db416e864d2afjpeg.jpeg"}]],
+  "shopLists":[{
+    "name":"南小馆（来福士店）",
+    "score":4.6,
+    "sales":967,
+    "minPrice":20,
+    "deliverPrice":5,
+    "consume":43,
+    "miles":348,
+    "deliverTime":39,
+    "pic":"https://fuss10.elemecdn.com/6/b1/90b1dc58165d9b344803b555c49b3jpeg.jpeg"
+  },
+    {
+      "name":"真功夫（新世界店）",
+      "score":4.3,
+      "sales":1261,
+      "minPrice":0,
+      "deliverPrice":5,
+      "consume":28,
+      "miles":1300,
+      "deliverTime":60,
+      "pic":"https://fuss10.elemecdn.com/0/7b/23d537aaf7944521a73518d11c6f6jpeg.jpeg"
+    },
+    {
+      "name":"吉野家（先施店）",
+      "score":4.6,
+      "sales":967,
+      "minPrice":20,
+      "deliverPrice":5,
+      "consume":43,
+      "miles":348,
+      "deliverTime":39,
+      "pic":"https://fuss10.elemecdn.com/9/ad/0d65c70c3fa13ee0d9d337c4cb040png.png"
+    },
+    {
+      "name":"土老冒黄焖鸡米饭（人民广场店）",
+      "score":4.5,
+      "sales":2149,
+      "minPrice":0,
+      "deliverPrice":5,
+      "consume":4,
+      "miles":1530,
+      "deliverTime":34,
+      "pic":"https://fuss10.elemecdn.com/f/e5/1c448afcb7e70f35d50d2095db77bjpeg.jpeg"
+    },
+    {
+      "name":"米有沙拉Nice Meal（K11店）",
+      "score":5,
+      "sales":48,
+      "minPrice":20,
+      "deliverPrice":5,
+      "consume":25,
+      "miles":763,
+      "deliverTime":28,
+      "pic":"https://fuss10.elemecdn.com/3/b4/12f1207168e99983323f850a13a42png.png"
+    },
+    {
+      "name":"焦耳∙川式快餐（人民广场店）",
+      "score":4.3,
+      "sales":2252,
+      "minPrice":0,
+      "deliverPrice":2.9,
+      "consume":17,
+      "miles":407,
+      "deliverTime":40,
+      "pic":"https://fuss10.elemecdn.com/5/2f/284720c92e16efe11ad8eca539de5jpeg.jpeg"
+    },
+    {
+      "name":"Wagas沃歌斯（无限度广场）",
+      "score":4.9,
+      "sales":386,
+      "minPrice":0,
+      "deliverPrice":5,
+      "consume":59,
+      "miles":698,
+      "deliverTime":34,
+      "pic":"https://fuss10.elemecdn.com/0/43/285a39d99becc20178d42c389317bjpeg.jpeg"
+    },
+    {
+      "name":"波仔脆皮鸡饭（闸北店）",
+      "score":4.7,
+      "sales":1018,
+      "minPrice":20,
+      "deliverPrice":5,
+      "consume":16,
+      "miles":2540,
+      "deliverTime":37,
+      "pic":"https://fuss10.elemecdn.com/a/53/9ce5c0febe72f65f4c7e761ea021ejpeg.jpeg"
+    },
+    {
+      "name":"随便·奶爸沙拉Salad to go",
+      "score":4.7,
+      "sales":293,
+      "minPrice":20,
+      "deliverPrice":5,
+      "consume":23,
+      "miles":1810,
+      "deliverTime":38,
+      "pic":"https://fuss10.elemecdn.com/4/30/f6cae7427ec233bc8a7ca71f0d5dfjpeg.jpeg"
+    }],
+  "hotWord":[{"name":"查理士"},{"name":"必胜客"},{"name":"米有沙拉"},{"name":"果之满满"},{"name":"久久丫"},
+    {"name":"棒约翰"},{"name":"汉堡王"},{"name":"冷面"},{"name":"吉祥馄饨"},{"name":"蜀地冒菜"}]
 }

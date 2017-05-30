@@ -7,15 +7,9 @@ import getters from './getters'
 Vue.use(Vuex);
 
 const state = {
-  test1: 1,
-  test2: [1, 2, 3],
-  test3: {
-    pr1: 1,
-    pr2: 2,
-    pr3: 3
-  },
-  test4: 10
-}
+  foods: null,
+  seller: null
+};
 
 export default new Vuex.Store({
   state,

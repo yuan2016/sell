@@ -16,7 +16,7 @@
           <h1 class="title">{{item.name}}</h1>
           <ul>
             <li v-for="food in item.foods" class="food-item" @click.stop.prevnet="selectFood(food)">
-              <div class="icon" width="57" height="57">
+              <div class="icon">
                 <img :src="food.icon">
               </div>
               <div class="content">
@@ -27,8 +27,7 @@
                   <span>好评率{{food.rating}}%</span>
                 </div>
                 <div class="price">
-                  <span class="now">￥{{food.price}}</span><span class="old"
-                                                                v-show="food.oldPrice">￥{{food.oldPrice}}</span>
+                  <span class="now">￥{{food.price}}</span><span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                 </div>
                 <div class="cartcontrol-wrapper">
                   <cartcontrol @cart-add="_drop" :food="food"></cartcontrol>
@@ -46,6 +45,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {mapMutations} from 'vuex';
   import BScroll from 'better-scroll';
   import shopcart from '../shopcart/shopcart.vue';
   import cartcontrol from '../cartcontrol/cartcontrol.vue';
@@ -103,11 +103,15 @@
               foods.push(food);
             }
           })
-        })
+        });
+        this.RECORD_FOODS(foods);
         return foods;
       }
     },
     methods: {
+      ...mapMutations([
+        'RECORD_FOODS'
+      ]),
       _drop (target) {
         this.$nextTick(() => {
           this.$refs.shopCart.drop(target);
@@ -160,33 +164,33 @@
   .goods
     display: flex
     position: absolute
-    top: 174px
-    bottom: 46px
+    top: 8.7rem
+    bottom: 2.3rem
     width: 100%
     overflow: hidden
     .menu-wrapper
-      flex: 0 0 80px
-      width: 80px
+      flex: 0 0 4rem
+      width: 4rem
       background: #f3f5f7
       .menu-item
         display: table
-        padding: 0 12px;
-        width: 56px
-        height: 54px
+        padding: 0 0.6rem;
+        width: 2.8rem
+        height: 2.7rem
         .text
           display: table-cell
-          width: 56px
-          height: 54px
+          width: 2.8rem
+          height: 2.7rem
           vertical-align: middle
           text-align: center
           border-1px(rgba(7, 17, 27, .1))
-          line-height: 14px
-          font-size: 12px
+          line-height: 0.7rem
+          font-size: 0.6rem
           font-weight: 200
         &.current
           position: relative
           z-index: 10
-          margin-top: -1px
+          margin-top: -0.05rem
           background-color: #fff
           .text
             border-none()
@@ -194,54 +198,57 @@
     .foods-wrapper
       flex: 1
       .title
-        padding-left: 14px
-        height: 26px
-        line-height: 26px
-        border-left: 2px solid #d9dde1
-        font-size: 12px
+        padding-left: 0.7rem
+        height: 1.3rem
+        line-height: 1.3rem
+        border-left: 0.1rem solid #d9dde1
+        font-size: 0.6rem
         color: rgb(147, 153, 159)
         background: #f3f5f7
       .food-item
         display: flex
-        margin: 18px
-        padding-bottom: 18px
+        margin: 0.7rem 0 0.7rem 0.7rem
+        padding-bottom: 0.7rem
         border-1px: (rgba(7, 17, 27, 0.1))
         &:last-child
           border-none()
           margin-bottom: 0
         .icon
-          flex: 0 0 57px
-          margin-right: 10px
+          flex: 0 0 4.4rem
+          margin-right: 0.5rem
+          img
+            width:4.4rem
+            height: 4.4rem
         .content
           flex: 1
           .name
-            margin: 2px 0 8px 0
-            line-height: 14px
-            font-size: 14px
+            margin: 0.077rem 0 0.308rem 0
+            line-height: 0.539rem
+            font-size: 0.539rem
             color: rgb(7, 17, 27)
           .desc, .extra
-            line-height: 10px
-            font-size: 10px
+            line-height: 0.385rem
+            font-size: 0.385rem
             color: rgb(147, 153, 159)
           .desc
-            margin-bottom: 8px
-            line-height: 14px
+            margin-bottom: 0.308rem
+            line-height: 0.739rem
           .extra
             .count
-              margin-right: 12px
+              margin-right: 0.162rem
           .price
             font-weight 700
-            line-height 24px
+            line-height 0.924rem
             .now
-              margin-right: 8px
-              font-size: 14px
+              margin-right: 0.308rem
+              font-size: 0.539rem
               color: rgb(240, 20, 20)
             .old
               text-decoration: line-through
-              font-size: 10px
+              font-size: 0.385rem
               color: rgb(147, 153, 159)
           .cartcontrol-wrapper
             position: absolute
             right: 0
-            bottom: 12px
+            bottom: 0.462rem
 </style>

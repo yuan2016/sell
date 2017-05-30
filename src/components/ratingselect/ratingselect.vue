@@ -68,23 +68,23 @@
 
 .ratingselect
   .rating-type
-    padding:18px 0
-    margin: 0 18px
+    padding: 0.9rem 0
+    margin: 0 0.9rem
     border-1px(rgba(7,17,27,0.1))
     font-size:0
     .block
       display: inline-block
-      padding:8px 12px
-      margin-right: 8px
-      line-height: 16px
-      border-radius :1px
-      font-size: 12px
+      padding: 0.4rem 0.6rem
+      margin-right: 0.4rem
+      line-height: 0.8rem
+      border-radius :0.05rem
+      font-size: 0.6rem
       color: rgb(77, 85, 93)
       &.active
         color: #fff
       .count
-        margin-left: 2px
-        font-size: 8px
+        margin-left: 0.1rem
+        font-size: 0.4rem
       &.positive
         background: rgba(0, 160, 220, 0.2)
         &.active
@@ -94,23 +94,23 @@
         &.active
           background: rgb(77, 85, 93)
   .switch
-    padding:12px 18px
+    padding: 0.6rem 0.9rem
     font-size:0
-    border-bottom :1px solid rgba(7,17,27,0.1)
+    border-bottom :0.05rem solid rgba(7,17,27,0.1)
     &.on
       .icon-check_circle
         color:#00c850
     .icon-check_circle
       display :inline-block
       vertical-align :middle
-      margin-right:4px
-      font-size: 24px
-      line-height :24px
+      margin-right: 0.2rem
+      font-size: 1.2rem
+      line-height :1.2rem
       color: rgb(147, 153, 159)
     .text
       display :inline-block
       vertical-align :middle
-      font-size: 12px
-      line-height :24px
+      font-size: 0.6rem
+      line-height :1.2rem
       color: rgb(147, 153, 159)
 </style>

@@ -2,12 +2,13 @@
   <div class="header">
     <div class="content-wrapper">
       <div class="avatar">
-        <img width="64" height="64" :src="seller.avatar">
+        <img :src="seller.avatar">
       </div>
       <div class="content">
         <div class="title">
           <span class="brand"></span>
           <span class="name">{{seller.name}}</span>
+          <i class="icon-shopping_card_1" @click.stop.prevent="jumpTo({path:'/shopping'})"></i>
         </div>
         <div class="description">
           {{seller.description}}/{{seller.deliveryTime}}分钟送达
@@ -69,21 +70,11 @@
 <script type="text/ecmascript-6">
   import Star from '../star/star';
   import TypeIcon from '../typeIcon/typeIcon.vue';
-  import {mapState, mapMutations, mapActions} from 'vuex'
 
 export default {
-  mounted () {
-    this.getUserInfo();
-  },
-  computed: {
-    ...mapState([
-      'test1'
-    ])
-  },
   data () {
     return {
-      isShowDetail: false,
-      tt: 3
+      isShowDetail: false
     }
   },
   props: {
@@ -92,18 +83,14 @@ export default {
     }
   },
   methods: {
-    ...mapMutations([
-      'TEST1'
-    ]),
-    ...mapActions([
-      'getUserInfo'
-    ]),
     showDetail () {
       this.isShowDetail = true;
-      this.TEST1(this.tt);
     },
     closeDetial () {
       this.isShowDetail = false;
+    },
+    jumpTo (path) {
+      this.$router.push(path);
     }
   },
   created () {
@@ -127,63 +114,72 @@ export default {
   overflow:auto
   .content-wrapper
     position :relative
-    padding:24px 12px 18px 24px
+    padding:1.2rem 0.6rem 0.9rem 1.2rem
     .avatar
       display: inline-block
-      width: 64px
-      height: 64px
-      border-radius :2px
+      width: 3.2rem
+      height: 3.2rem
+      border-radius :0.1rem
+      img
+        width: 3.2rem
+        height: 3.2rem
     .content
       display :inline-block
-      padding:2px 0 2px 16px
+      padding:0.1rem 0 0.1rem 0.8rem
       vertical-align :top
       .title
+        position: relative
         .brand
           display :inline-block
-          margin-right: 6px
+          margin-right: 0.3rem
           vertical-align :top
           bg-image('brand')
-          width: 30px
-          height: 18px
-          background-size: 30px 18px
+          width: 1.5rem
+          height: 0.9rem
+          background-size: 1.5rem 0.9rem
           background-repeat :no-repeat
+        .icon-shopping_card_1
+          position: absolute
+          top:0
+          right: -1rem
+          font-size: 1rem
         .name
           vertical-align :top
-          line-height:18px
-          font-size: 16px
+          line-height:0.9rem
+          font-size: 0.8rem
           font-weight :bold
       .description
-        padding:8px 0 10px 0
-        line-height: 12px
-        font-size: 12px
+        padding:0.4rem 0 0.5rem 0
+        line-height: 0.6rem
+        font-size: 0.6rem
         font-weight :200
       .support
         .text
-          margin-left: 4px
-          line-height 12px
-          font-size: 10px
+          margin-left: 0.2rem
+          line-height 0.6rem
+          font-size: 0.5rem
     .support-count
       position: absolute
-      right: 12px
-      bottom: 14px
-      padding: 0 8px
-      height: 24px
-      line-height: 24px
-      border-radius: 14px
+      right: 0.6rem
+      bottom: 0.7rem
+      padding: 0 0.4rem
+      height: 1.2rem
+      line-height: 1.2rem
+      border-radius: 0.7rem
       background: rgba(0, 0, 0, 0.2)
       text-align: center
       .count
         vertical-align: top
-        font-size: 10px
+        font-size: 0.5rem
       .icon-keyboard_arrow_right
-        margin-left: 2px
-        line-height: 24px
-        font-size: 10px
+        margin-left: 0.1rem
+        line-height: 1.2rem
+        font-size: 0.5rem
   .bulletin-wrapper
-    padding:0 22px 0 12px
+    padding:0 1.1rem 0 0.6rem
     position:relative
-    height:28px
-    line-height:28px
+    height:1.4rem
+    line-height:1.4rem
     white-space:nowrap
     overflow:hidden
     text-overflow:ellipsis
@@ -191,21 +187,21 @@ export default {
     .bulletin-title
       display:inline-block
       vertical-align:middle
-      width:22px
-      height:12px
+      width:1.1rem
+      height:0.6rem
       bg-image('bulletin')
-      background-size:22px 12px
+      background-size:1.1rem 0.6rem
       background-repeat:no-repeat
     .bulletin-text
       vertical-align: middle
-      margin: 0 4px
-      font-size:10px
+      margin: 0 0.2rem
+      font-size:0.5rem
       font-weight:200
     .icon-keyboard_arrow_right
       position:absolute
-      top:8px
-      font-size:10px
-      right:12px
+      top:0.4rem
+      font-size:0.5rem
+      right:0.6rem
   .background
     position:absolute
     left:0
@@ -213,7 +209,7 @@ export default {
     width:100%
     height:100%
     z-index:-1
-    filter:blur(10px)
+    filter:blur(0.5rem)
   .detail
     position: fixed
     top:0
@@ -223,7 +219,7 @@ export default {
     z-index:100
     overflow:auto
     background :rgba(7,17,27,0.8)
-    backdrop-filter: blur(10px)
+    backdrop-filter: blur(0.5rem)
     &.fade-enter-active
       transition: all .4s linear
     &.fade-leave-active
@@ -238,57 +234,57 @@ export default {
       width:100%
       color:rgb(255,255,255)
       .detail-main
-        margin-top :64px
-        padding-bottom 64px
+        margin-top :3.2rem
+        padding-bottom 3.2rem
         .name
-          font-size: 16px
+          font-size: 0.8rem
           font-weight :700
-          line-height :16px
+          line-height :0.8rem
           text-align :center
         .star-wrapper
-          margin-top: 16px
-          height: 48px
+          margin-top: 0.8rem
+          height: 2.4rem
           text-align :center
         .title
           display:flex
           width:80%
-          margin:28px auto 24px auto
+          margin:1.4rem auto 1.2rem auto
           .line
             flex: 1
             position: relative
-            top: -6px
-            border-bottom: 1px solid rgba(255, 255, 255, .2)
+            top: -0.3rem
+            border-bottom: 0.05rem solid rgba(255, 255, 255, .2)
           .text
-            margin: 0 12px
-            line-height: 14px
-            font-size: 14px
+            margin: 0 0.6rem
+            line-height: 0.7rem
+            font-size: 0.7rem
             font-weight: 700
         .supports
           width: 80%
           margin: 0 auto
           .support-item
-            padding: 0 12px
-            margin-bottom: 12px
+            padding: 0 0.6rem
+            margin-bottom: 0.6rem
             font-size: 0
             &:last-child
               margin-bottom: 0
             .text
-              margin-left: 6px
+              margin-left: 0.3rem
               vertical-align :top
-              font-size: 12px
+              font-size: 0.6rem
               font-weight: 200
         .bulletin
           width :80%
           margin:0 auto
           .content
-            font-size:12px
+            font-size:0.6rem
             font-weight :200
-            line-height:24px
+            line-height:1.2rem
     .detail-close
-      margin: -64px auto
-      padding-top :16px
-      width: 32px
-      height: 32px
-      font-size: 32px
+      margin: -3.2rem auto
+      padding-top :0.8rem
+      width: 1.6rem
+      height: 1.6rem
+      font-size: 1.6rem
       color:rgba(255,255,255,0.5)
 </style>

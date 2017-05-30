@@ -50,23 +50,23 @@
     vertical-align: top
     background-repeat: no-repeat
     &.size-1
-      width: 12px
-      height: 12px
-      background-size: 12px 12px
+      width: 0.6rem
+      height: 0.6rem
+      background-size: 0.6rem 0.6rem
       type-mix(1)
     &.size-2
-      width: 16px
-      height: 16px
-      background-size: 16px 16px
+      width: 0.8rem
+      height: 0.8rem
+      background-size: 0.8rem 0.8rem
       type-mix(2)
     &.size-3
-      width: 12px
-      height: 12px
-      background-size: 12px 12px
+      width: 0.6rem
+      height: 0.6rem
+      background-size: 0.6rem 0.6rem
       type-mix(3)
     &.size-4
-      width: 16px
-      height: 16px
-      background-size: 16px 16px
+      width: 0.8rem
+      height: 0.8rem
+      background-size: 0.8rem 0.8rem
       type-mix(4)
 </style>

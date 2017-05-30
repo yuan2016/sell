@@ -156,7 +156,7 @@
     left: 0
     top: 0
     width: 100%
-    bottom: 48px
+    bottom: 2.4rem
     z-index: 30
     background: #fff
     &.right-enter-active, &.right-leave-active
@@ -177,59 +177,59 @@
         height: 100%
       .back
         position: absolute
-        top: 10px
+        top: 0.5rem
         left: 0
         .icon-arrow_lift
           display: block
-          padding: 10px
-          font-size: 20px
+          padding: 0.5rem
+          font-size: 1rem
           color: #fff
     .content
-      padding: 18px
+      padding: 0.9rem
       position: relative
       .title
-        line-height: 14px
-        margin-bottom: 8px
-        font-size: 10px
+        line-height: 0.7rem
+        margin-bottom: 0.4rem
+        font-size: 0.5rem
         font-weight: 700
         color: rgb(7, 17, 27)
       .detail
-        margin-bottom: 18px
-        line-height: 10px
+        margin-bottom: 0.9rem
+        line-height: 0.5rem
         font-size: 0
-        height: 10px
+        height: 0.5rem
         .sell-count, .rating
-          font-size: 10px
+          font-size: 0.5rem
           color: rgb(147, 153, 159)
         .sell-count
-          margin-right: 12px
+          margin-right: 0.6rem
       .price
         font-weight 700
-        line-height 24px
+        line-height 1.2rem
         .now
-          margin-right: 8px
-          font-size: 14px
+          margin-right: 0.4rem
+          font-size: 0.7rem
           color: rgb(240, 20, 20)
         .old
           text-decoration: line-through
-          font-size: 10px
+          font-size: 0.5rem
           color: rgb(147, 153, 159)
 
       .cartcontrol-wrapper
         position: absolute
-        bottom: 12px
-        right: 12px
+        bottom: 0.6rem
+        right: 0.6rem
       .buy
         position: absolute
-        right: 18px
-        bottom: 18px
-        z-index: 10px
-        height: 24px
-        line-height: 24px
-        padding: 0 12px
+        right: 0.9rem
+        bottom: 0.9rem
+        z-index: 0.5rem
+        height: 1.2rem
+        line-height: 1.2rem
+        padding: 0 0.6rem
         box-sizing: border-box
-        border-radius 12px
-        font-size: 10px
+        border-radius 0.6rem
+        font-size: 0.5rem
         color: #fff
         background: rgb(0, 160, 220)
         &.fade-enter-active, &.fade-leave-active
@@ -238,63 +238,63 @@
         &.fade-enter, &.fade-leave-active
           opacity: 0
     .info
-      padding: 18px
+      padding: 0.9rem
       .title
-        line-height: 14px
-        margin-bottom: 6px
-        font-size: 14px
+        line-height: 0.7rem
+        margin-bottom: 0.3rem
+        font-size: 0.7rem
         color: rgb(7, 17, 27)
       .text
-        padding: 0 8px
-        line-height: 24px
-        font-size: 12px
+        padding: 0 0.4rem
+        line-height: 1.2rem
+        font-size: 0.6rem
         color: rgb(77, 85, 93)
     .rating
-      padding-top: 18px
+      padding-top: 0.9rem
       .title
-        line-height: 14px
-        margin-left: 18px
-        font-size: 14px
+        line-height: 0.7rem
+        margin-left: 0.9rem
+        font-size: 0.7rem
         color: rgb(7, 17, 27)
       .rating-wrapper
-        padding: 0 18px
+        padding: 0 0.9rem
         .rating-item
           position: relative
-          padding: 16px 0
+          padding: 0.8rem 0
           border-1px(rgba(7, 17, 27, .1))
           .user
             position: absolute
             right: 0
-            top: 16px
-            line-height: 12px
+            top: 0.8rem
+            line-height: 0.6rem
             font-size: 0
             .name
               display: inline-block
-              margin-right: 6px
+              margin-right: 0.3rem
               vertical-align: top
-              font-size: 10px
+              font-size: 0.5rem
               color: rgb(147, 153, 159)
             .avatar
               border-radius: 50%
           .time
-            margin-bottom: 6px
-            line-height: 12px
-            font-size: 10px
+            margin-bottom: 0.3rem
+            line-height: 0.6rem
+            font-size: 0.5rem
             color: rgb(147, 153, 159)
           .text
-            line-height: 16px
-            font-size: 12px
+            line-height: 0.8rem
+            font-size: 0.6rem
             color: rgb(7, 17, 27)
             .icon-thumb_up, .icon-thumb_dowm
-              margin-right: 4px
-              line-height: 16px
-              font-size: 12px
+              margin-right: 0.2rem
+              line-height: 0.8rem
+              font-size: 0.6rem
             .icon-thumb_up
               color: rgb(0, 160, 220)
             .icon-thumb_down
               color: rgb(147, 153, 159)
         .no-rating
-          padding: 16px 0
-          font-size: 12px
+          padding: 0.8rem 0
+          font-size: 0.6rem
           color: rgb(147, 153, 159);
 </style>

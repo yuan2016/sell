@@ -3,6 +3,11 @@ var path = require('path')
 
 module.exports = {
   build: {
+    //__dirname 在任何模块文件内部，可以使用__dirname变量获取当前模块文件所在目录的完整绝对路径
+    //path：指定编译目录而已（/build/js/），不能用于html中的js引用。
+    /*publicPath：虚拟目录，自动指向path编译目录（/assets/ => /build/js/）。html中引用js文件时，
+      必须引用此虚拟路径（但实际上引用的是内存中的文件，
+      既不是/build/js/也不是/assets/）。*/
     env: require('./prod.env'),// 使用 config/prod.env.js 中定义的编译环境
     index: path.resolve(__dirname, '../dist/index.html'),// 编译输入的 index.html 文件
     assetsRoot: path.resolve(__dirname, '../dist'),// 编译输出的静态资源路径

@@ -11,6 +11,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 /* 如果我们想将 webpack 打包成一个文件 css js 分离开，那我们需要这个插件 */
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+////压缩提取出的css，并解决ExtractTextPlugin分离出的js重复问题(多个文件引入同一css文件)
 
 var env = config.build.env
 /* 合并 webpack.base.conf.js */
@@ -83,6 +84,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: function (module, count) {
+        //如果用了任何一个插件，把插件里边的js也分离到vendor
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&
@@ -95,16 +97,18 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
+    //提取webpack运行时和模块的缓存放到他们自己的文件里防止vendor的哈希值变化当app的js改变
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
-      chunks: ['vendor']
+      chunks: ['vendor']    //只提取vendor节点
     }),
-    // copy custom static assets
+    // Copy files and directories in webpack 在webpack中拷贝文件和文件夹
+    //拷贝静态资源
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
+        to: config.build.assetsSubDirectory,    //  'static'
+        ignore: ['.*']   //忽略拷贝的文件，可用模糊查询
       }
     ])
   ]
@@ -129,7 +133,7 @@ if (config.build.productionGzip) {
     })
   )
 }
-
+//分析 Webpack 生成的包体组成并且以可视化的方式反馈给开发者
 if (config.build.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())

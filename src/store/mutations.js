@@ -1,10 +1,10 @@
-import {TEST1, TEST2} from './mutation-types.js';
+import {RECORD_FOODS, RECORD_SELLER} from './mutation-types.js';
 
 export default {
-  [TEST1] (state) {
-    state.test1++;
+  [RECORD_FOODS] (state, foods) {
+    state.foods = foods;
   },
-  [TEST2] (state, res) {
-    state.test4 = state.test4 + res;
+  [RECORD_SELLER] (state, seller) {
+    state.seller = seller;
   }
 }

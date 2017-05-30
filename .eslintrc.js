@@ -26,5 +26,8 @@ module.exports = {
     'semi': 0,
     'indent': 0,
     'no-unused-vars': 0
+  },
+  'globals': {
+    "Swiper": true
   }
 }

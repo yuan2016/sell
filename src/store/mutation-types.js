@@ -1,2 +1,2 @@
-export const TEST1 = 'TEST1';
-export const TEST2 = 'TEST2';
+export const RECORD_FOODS = 'RECORD_FOODS';
+export const RECORD_SELLER = 'RECORD_SELLER';

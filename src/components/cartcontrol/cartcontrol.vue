@@ -41,34 +41,34 @@
     font-size :0
     .cart-decrease
       display: inline-block
-      padding: 6px
-      line-height :24px
-      font-size: 24px
+      padding: 0.3rem
+      line-height :1.2rem
+      font-size: 1.2rem
       color :rgb(0,160,220)
       &.move-enter-active
         transform: translate3d(0, 0, 0) rotate(0)
         opacity: 1
         transition: all .2s ease-out
       &.move-leave-active
-        transform: translate3d(24px, 0, 0) rotate(-180deg)
+        transform: translate3d(1.2rem, 0, 0) rotate(-180deg)
         opacity: 0
         transition: all .2s ease-out
       &.move-enter, &.move-leave
-        transform: translate3D(24px, 0, 0) rotate(180deg)
+        transform: translate3D(1.2rem, 0, 0) rotate(180deg)
         opacity: 0
     .cart-count
       display: inline-block
       vertical-align :top
-      width: 12px
-      padding-top: 6px
-      line-height :24px
+      width: 0.6rem
+      padding-top: 0.3rem
+      line-height :1.2rem
       text-align: center
-      font-size :10px
+      font-size :0.5rem
       color: rgb(147, 153, 159)
     .cart-add
       display: inline-block
-      padding: 6px
-      line-height :24px
-      font-size: 24px
+      padding: 0.3rem
+      line-height :1.2rem
+      font-size: 1.2rem
       color :rgb(0,160,220)
 </style>

@@ -32,7 +32,7 @@
         <ul>
           <li v-show="needShow(rating.rateType,rating.text)" class="rating-item" v-for="rating in ratings">
             <div class="avatar">
-              <img :src="rating.avatar" width="28" height="28">
+              <img :src="rating.avatar">
             </div>
             <div class="content">
               <h1 class="name">{{rating.username}}</h1>
@@ -143,127 +143,124 @@
 
   .ratings
     position: absolute
-    top: 174px
+    top: 8.7rem
     bottom: 0
     left: 0
     width: 100%
     overflow: hidden
     .overview
       display: flex
-      padding: 18px 0
+      padding: 0.9rem 0
       .overview-left
-        flex: 0 0 137px
-        width: 137px
-        border-right: 1px solid rgba(7, 17, 27, .1)
+        flex: 0 0 6.05rem
+        width: 6.05rem
+        border-right: 0.05rem solid rgba(7, 17, 27, .1)
         text-align: center
-        @media only screen and (max-width: 320px)
-          flex: 0 0 120px
-          width: 120px
         .score
-          margin-bottom: 6px
-          line-height: 28px
-          font-size: 24px
+          margin-bottom: 0.3rem
+          line-height: 1.4rem
+          font-size: 1.2rem
           color: rgb(255, 153, 0)
         .title
-          margin-bottom: 8px
-          line-height: 12px
-          font-size: 12px
+          margin-bottom: 0.4rem
+          line-height: 0.6rem
+          font-size: 0.6rem
           color: rgb(7, 17, 27)
         .rank
-          padding-bottom: 6px 0 6px 24px
-          line-height: 10px
-          font-size: 10px
+          padding-bottom: 0.3rem 0 0.3rem 1.2rem
+          line-height: 0.5rem
+          font-size: 0.5rem
           color: rgb(147, 153, 159)
       .overview-right
         flex: 1
-        padding-left: 24px
-        @media only screen and (max-width: 320px)
-          padding-left: 2px
+        padding-left: 0.1rem
         .delivery-wrapper, .score-wrapper
           font-size: 0
           .title
             display: inline-block
-            line-height: 18px
+            line-height: 0.9rem
             vertical-align: top
-            font-size: 12px
+            font-size: 0.6rem
             color: rgb(7, 17, 27)
           .star
             display: inline-block
-            margin: 0 12px
+            margin: 0 0.5rem
             vertical-align: top
           .score
             display: inline-block
-            line-height: 18px
+            line-height: 0.9rem
             vertical-align: top
-            font-size: 12px
+            font-size: 0.6rem
             color: rgb(255, 153, 0)
         .score-wrapper
-          margin-bottom: 8px
+          margin-bottom: 0.4rem
         .delivery-wrapper
           .delivery
-            margin-left: 12px
-            line-height: 18px
+            margin-left: 0.6rem
+            line-height: 0.9rem
             vertical-align: top
-            font-size: 12px
+            font-size: 0.6rem
             color: rgb(147, 153, 159)
 
     .rating-wrapper
-      padding: 0 18px
+      padding: 0 0.9rem
       .rating-item
         display: flex
-        padding: 18px 0
+        padding: 0.9rem 0
         border-1px(rgba(7, 17, 27, .1))
         .avatar
-          flex: 0 0 28px
-          width: 28px
-          margin-right: 12px
+          flex: 0 0 1.4rem
+          width: 1.4rem
+          margin-right: 0.6rem
           img
+            width: 1.4rem
+            height: 1.4rem
             border-radius: 50%
         .content
           position: relative
           flex: 1
           .name
-            margin-bottom: 4px
-            line-height: 12px
-            font-size: 10px
+            margin-bottom: 0.2rem
+            line-height: 0.6rem
+            font-size: 0.5rem
             color: rgb(7, 17, 27)
           .star-wrapper
-            margin-bottom: 6px
+            margin-bottom: 0.3rem
             font-size: 0
             .star
               display: inline-block
-              margin-right: 6px
+              margin-right: 0.3rem
               vertical-align: top
             .delivery
               display: inline-block
               vertical-align: top
-              line-height: 12px
-              font-size: 10px
+              line-height: 0.6rem
+              font-size: 0.5rem
               color: rgb(147, 153, 159)
 
           .text
-            margin-bottom: 18px
-            line-height: 18px
+            margin-bottom: 0.9rem
+            line-height: 0.9rem
             color: rgb(7, 17, 27)
-            font-size: 12px
+            font-size: 0.6rem
           .recommend
-            font-size: 0px
+            font-size: 0
             .icon-thumb_up, .recommend-item, .icon-thumb_down
-              margin: 0 8px 4px 0
-              line-height: 16px
+              margin: 0 0.4rem 0.2rem 0
+              line-height: 0.8rem
               vertical-align: top
-              font-size: 9px
+              font-size: 0.45rem
             .icon-thumb_up
               color: rgb(0, 160, 220)
             .icon-thumb_down
               color: rgb(183, 187, 191)
             .recommend-item
               display: inline-block
-              padding: 0 6px
-              max-width: 120px
+              padding: 0 0.3rem
+              max-width: 6rem
               color: rgb(147, 153, 159)
-              border: 1px solid rgba(7, 17, 27, .1)
-              border-radius: 2px
+              border: 0.05rem solid rgba(7, 17, 27, .1)
+              border-radius: 0.1rem
               background-color: rgb(255, 255, 255);
               white-space: nowrap
               overflow: hidden
@@ -273,13 +270,13 @@
             position: absolute
             top: 0
             right: 0
-            line-height: 12px
-            font-size: 10px
+            line-height: 0.6rem
+            font-size: 0.5rem
             color: rgb(147, 153, 159)
 
     .no-rating
-      padding: 16px 0
-      font-size: 12px
+      padding: 0.8rem 0
+      font-size: 0.6rem
       color: rgb(147, 153, 159)
 
 

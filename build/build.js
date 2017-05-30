@@ -13,7 +13,7 @@ var webpackConfig = require('./webpack.prod.conf')
 var spinner = ora('building for production...')// 使用 ora 打印出 loading + log
 spinner.start()// 开始 loading 动画
 
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
+rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {   //dist/static
   if (err) throw err
   webpack(webpackConfig, function (err, stats) {
     spinner.stop()
